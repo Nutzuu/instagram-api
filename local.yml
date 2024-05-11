@@ -1,0 +1,35 @@
+version: '3'
+
+volumes:
+  insta_clone_local_postgres_data: {}
+  insta_clone_local_postgres_data_backups: {}
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    image: insta_clone_local_django
+    container_name: insta_clone_local_django
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app:z
+    env_file:
+      - ./.envs/.local/.django
+      - ./.envs/.local/.postgres
+    ports:
+      - '8000:8000'
+    command: /start
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: insta_clone_production_postgres
+    container_name: insta_clone_local_postgres
+    volumes:
+      - insta_clone_local_postgres_data:/var/lib/postgresql/data
+      - insta_clone_local_postgres_data_backups:/backups
+    env_file:
+      - ./.envs/.local/.postgres

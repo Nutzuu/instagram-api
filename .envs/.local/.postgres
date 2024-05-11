@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=insta_clone
+POSTGRES_USER=BhCTdBdODeRNEFzwHbXGiSfgDFeIvifu
+POSTGRES_PASSWORD=9mF3pV5vw2pm4KOoLBJ8uANSBh51CbUhDkNaVVgn6eotw1KBKF99o6aJaKxwReJq
