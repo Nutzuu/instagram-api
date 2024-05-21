@@ -14,7 +14,8 @@ SECRET_KEY = env(
     default="Hmumd3jdhDaArFAmsM2FkXDT5JqiCCLvKSh8nB6FvQXLkigLcmRmB0pPMrO6NKW0",
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]  # noqa: S104
+ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1",]  # noqa: S104
 
 # CACHES
 # ------------------------------------------------------------------------------
@@ -65,3 +66,13 @@ INSTALLED_APPS += ["django_extensions"]
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+ALLOWED_HOSTS = ["*"]
+
+CORS_ORIGIN_WHITELIST = [
+    'https://localhost:3000',
+    'https://0.0.0.0:3000',
+    'https://127.0.0.1:3000'
+]
+
+CORS_ALLOW_ALL_ORIGINS = True  # Not recommended for production
