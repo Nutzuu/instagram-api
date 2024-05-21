@@ -258,7 +258,32 @@ LOGGING = {
             "formatter": "verbose",
         },
     },
-    "root": {"level": "INFO", "handlers": ["console"]},
+    "root": {
+        "level": "WARNING",  # Change this to DEBUG
+        "handlers": ["console"],
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
+        "django.request": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
+        "insta_clone": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+            "propagate": True,
+        },
+        "inotify_buffer": { 
+            "handlers": ["console"],
+            "level": "WARNING", 
+            "propagate": False,
+        },
+    },
 }
 
 
