@@ -1,7 +1,7 @@
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.generics import ListAPIView
+from rest_framework.views import APIView # type: ignore
+from rest_framework.response import Response # type: ignore
+from rest_framework.permissions import IsAuthenticated # type: ignore
+from rest_framework.generics import ListAPIView # type: ignore
 from ..models import Post, Comment
 from .serializers import PostSerializer, CommentSerializer
 
